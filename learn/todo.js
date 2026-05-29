@@ -19,8 +19,14 @@ function remove(index) {
   todos.splice(index, 1);
 }
 
-function clear() {
+function clearDone() {
+  const remaining = todos.filter(t => !t.done);
   todos.length = 0;
+  todos.push(...remaining);
+}
+
+function findByKeyword(keyword) {
+  return todos.filter(t => t.task.includes(keyword));
 }
 
 // 示例
@@ -29,6 +35,7 @@ add("学 Python");
 add("学 JavaScript");
 done(0);
 done(1);
-remove(2);
+console.log("全部:");
 list();
-console.log(`共 ${todos.length} 条`);
+console.log("---");
+console.log("搜索 'Git':", findByKeyword("Git"));
