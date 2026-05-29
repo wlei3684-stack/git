@@ -14,7 +14,11 @@ tries = 0
 print(f"范围 1~{limit}，你有 {max_tries} 次机会\n")
 
 while tries < max_tries:
-    guess = int(input(f"第 {tries + 1} 次猜测: "))
+    try:
+        guess = int(input(f"第 {tries + 1} 次猜测: "))
+    except ValueError:
+        print("⚠ 请输入数字！")
+        continue
     tries += 1
 
     if guess < answer:
@@ -26,3 +30,7 @@ while tries < max_tries:
         break
 else:
     print(f"\n💥 机会用完了！答案是 {answer}")
+
+again = input("\n再来一局？(y/n): ")
+if again.lower() == "y":
+    print("重新运行程序吧！")
