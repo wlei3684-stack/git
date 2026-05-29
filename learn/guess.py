@@ -31,6 +31,9 @@ while tries < max_tries:
 else:
     print(f"\n💥 机会用完了！答案是 {answer}")
 
+score = max(0, (max_tries - tries + 1) * 10)
+print(f"得分: {score}")
+
 again = input("\n再来一局？(y/n): ")
 if again.lower() == "y":
     print("重新运行程序吧！")

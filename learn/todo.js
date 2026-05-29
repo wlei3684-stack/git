@@ -25,6 +25,10 @@ function clearDone() {
   todos.push(...remaining);
 }
 
+function undo(index) {
+  if (todos[index]) todos[index].done = false;
+}
+
 function findByKeyword(keyword) {
   return todos.filter(t => t.task.includes(keyword));
 }

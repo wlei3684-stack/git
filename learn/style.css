@@ -50,3 +50,10 @@ input[type="text"]:focus {
   outline: none;
   border-color: #4299e1;
 }
+
+.empty-message {
+  text-align: center;
+  color: #a0aec0;
+  padding: 40px;
+  font-style: italic;
+}
